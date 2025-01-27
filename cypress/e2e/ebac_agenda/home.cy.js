@@ -10,14 +10,16 @@ describe('Ir até a pagina de agenda', () => {
         cy.get('input[type="email"]').type('matias@teste.com')
         cy.get('input[type="tel"]').type('11 12345678')
         cy.get('.adicionar').click() 
+        cy.wait(5000)
     })
     
     it('Deve alterar um contato', () => {
         cy.get(':nth-child(5) > .sc-gueYoa > .edit').click()
-        cy.get('input[type="text"]').type('l')
-        cy.get('input[type="email"]').type('.com')
+        cy.get('input[type="text"]').type('_edit')
+        cy.get('input[type="email"]').type('.br')
         cy.get('input[type="tel"]').type('90')
         cy.get('.alterar').click()
+        cy.wait(5000)
     })
 
     it('Deve remover um contato', () => {
